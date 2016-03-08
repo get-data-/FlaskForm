@@ -1,0 +1,111 @@
+{% extends "head.html" %}
+
+{% block body %}
+
+<div role="tabpanel">
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#basics" aria-controls="basics" role="tab" data-toggle="tab">Basics</a></li>
+    <li role="presentation"><a href="#visu" aria-controls="visu" role="tab" data-toggle="tab">Visualize</a></li>
+    <li role="presentation"><a href="#dan" aria-controls="dan" role="tab" data-toggle="tab">Data Analysis</a></li>
+
+  </ul>
+
+  <!-- Tab panes -->
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane fade in active" id="basics">
+  <div class="container">
+  <h2>Keyword Data</h2>
+  <p>Take a look at how your keywords performed</p>            
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Query</th>
+        <th>Impressions</th>
+        <th>Clicks</th>
+		<th>Click-Through-Rate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Brand</td>
+        <td>12,000</td>
+        <td>6,000</td>
+		<td>50%</td>
+      </tr>
+      <tr>
+        <td>Generic</td>
+        <td>200</td>
+        <td>1</td>
+		<td>x%</td>
+      </tr>
+      <tr>
+        <td>Branded Product</td>
+        <td>1,500</td>
+        <td>500</td>
+		<td>30%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+  </div>
+  
+  <div role="tabpanel" class="tab-pane fade" id="visu">
+Imagine a graph
+  </div>
+	<div role="tabpanel" class="tab-pane fade" id="dan">
+		<div id={{ chartID|safe }} class="chart" style="height: 500px"></div>
+			<script>
+				var chart_id = {{ chartID|safe }}
+				var series = {{ series|safe }}
+				var title = {{ title|safe }}
+				var xAxis = {{ xAxis|safe }}
+				var yAxis = {{ yAxis|safe }}
+				var chart = {{ chart|safe }}
+			</script>
+			<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+			<script src="http://code.highcharts.com/highcharts.js"></script>
+			<script src="../static/graph.js"></script>
+
+  <div class="container">
+  <h2>Keyword Data</h2>
+  <p>Take a look at how your keywords performed</p>            
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Query</th>
+        <th>Impressions</th>
+        <th>Clicks</th>
+		<th>Click-Through-Rate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Brand</td>
+        <td>12,000</td>
+        <td>6,000</td>
+		<td>50%</td>
+      </tr>
+      <tr>
+        <td>Generic</td>
+        <td>200</td>
+        <td>1</td>
+		<td>x%</td>
+      </tr>
+      <tr>
+        <td>Branded Product</td>
+        <td>1,500</td>
+        <td>500</td>
+		<td>30%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+  </div>
+
+</div>
+
+</div>
+
+{% endblock %}
